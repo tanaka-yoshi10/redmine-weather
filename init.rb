@@ -1,6 +1,6 @@
 Redmine::Plugin.register :redmine_weather do
   name 'Redmine Weather plugin'
-  author 'Author name'
+  author 'Yoshito Tanaka'
   description 'This is a plugin for Redmine'
   version '0.0.1'
   url 'http://example.com/path/to/plugin'
