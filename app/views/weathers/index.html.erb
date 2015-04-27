@@ -2,3 +2,23 @@
 <p>
   <%= @weather["weather"][0]["main"] %>
 </p>
+
+<table class="table table-striped table-hover ">
+  <thead>
+  <tr>
+    <th>Country</th>
+    <th>City</th>
+    <th>Weather</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @weathers.each do |weather| %>
+      <tr>
+        <td><%= weather.country %></td>
+        <td><%= weather.city %></td>
+        <td><%= @weather["weather"][0]["main"] %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
