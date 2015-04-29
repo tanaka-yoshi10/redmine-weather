@@ -1,5 +1,6 @@
 class Weather < ActiveRecord::Base
   unloadable
+  attr_accessible :city, :country
 
   def weather
     uri = URI.parse('http://api.openweathermap.org/data/2.5/weather?q="' + self.city + '","' + self.country + '"')

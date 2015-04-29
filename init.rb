@@ -7,6 +7,4 @@ Redmine::Plugin.register :redmine_weather do
   author_url 'http://example.com/about'
 
   menu :application_menu, :weathers, { :controller => 'weathers', :action => 'index' }, :caption => 'Weathers'
-
-  settings :default => {'empty' => true}, :partial => 'weathers/settings/weather_settings'
 end
