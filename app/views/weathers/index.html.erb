@@ -14,14 +14,12 @@
 
   <tbody>
     <% @weathers.each do |weather| %>
-      <% weather_result = weather.weather %>
       <tr>
         <td><%= weather.city %></td>
         <td><%= weather.country %></td>
-        <% if weather_result["main"] != "error" %>
-          <td><img src="http://openweathermap.org/img/w/<%= weather_result["icon"] %>.png"></td>
+        <% weather.forecast(7).each do |day| %>
+          <td><img src="http://openweathermap.org/img/w/<%= day["weather"][0]["icon"] %>.png"></td>
         <% end %>
-        <td><%= weather_result["main"] %></td>
         <td><%= link_to 'Edit', edit_weather_path(weather) %></td>
         <td><%= link_to 'Destroy', weather, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
